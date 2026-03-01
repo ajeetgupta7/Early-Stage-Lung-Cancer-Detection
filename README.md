@@ -26,7 +26,7 @@ A comprehensive bioinformatics pipeline for preprocessing gene expression data f
 
 | Name | Student ID | Role | Email |
 |------|-----------|------|-------|
-| **Ajeet Gupta** | BL.SC.U4AIE24167 | Data Curation Lead | ajeetgupta7@bl.students.amrita.edu |
+| **Ajeet Gupta** | BL.SC.U4AIE24167 | Data Curation Lead | bl.sc.u4aie24167@bl.students.amrita.edu |
 | **B. Deva Harsha** | BL.SC.U4AIE24111 | Redundancy Removal Engineer | bl.sc.u4aie24111@bl.students.amrita.edu |
 | **Mamidi Yeswanth** | BL.SC.U4AIE24131 | Clustering Specialist | bl.sc.u4aie24131@bl.students.amrita.edu |
 | **K. B. Sohith Chowdary** | BL.SC.U4AIE24124 | Feature Engineer | bl.sc.u4aie24124@bl.students.amrita.edu |
