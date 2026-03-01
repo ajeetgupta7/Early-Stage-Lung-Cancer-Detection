@@ -66,3 +66,105 @@ This project demonstrates a systematic, team-based approach to gene expression d
 ---
 
 ## 🔄 Pipeline Architecture
+                      GSE31210.tsv
+                    (18,000+ genes)
+                          │
+                          ▼
+                ┌────────────────────┐
+                │  PHASE 1           │
+                │  DATA CURATION     │
+                │  Ajeet Gupta       │
+                └���───────┬───────────┘
+                         │
+               ✓ Remove NaN values
+               ✓ Remove duplicates
+               ✓ Validate gene IDs
+               ✓ Quality metrics
+                         │
+                         ▼
+             curated_data.tsv
+              (17,920 genes)
+                         │
+                         ▼
+                ┌────────────────────┐
+                │  PHASE 2           │
+                │  REDUNDANCY        │
+                │  REMOVAL           │
+                │  B. Deva Harsha    │
+                └────────┬───────────┘
+                         │
+               ✓ Compute correlations
+               ✓ Identify redundant genes
+               ✓ Remove (r > 0.95)
+               ✓ Generate statistics
+                         │
+                         ▼
+          non_redundant_data.tsv
+              (892 genes, 95% ↓)
+                         │
+                         ▼
+                ┌────────────────────┐
+                │  PHASE 3           │
+                │  SIMILARITY        │
+                │  CLUSTERING        │
+                │  Mamidi Yeswanth   │
+                └────────┬───────────┘
+                         │
+               ✓ Hierarchical clustering
+               ✓ Correlation distance
+               ✓ 60% similarity threshold
+               ✓ Cluster representatives
+               ✓ Dendrogram visualization
+                         │
+                         ▼
+        selected_similar_genes.tsv
+             (287 genes, 287 clusters)
+                         │
+                         ▼
+                ┌────────────────────┐
+                │  PHASE 4           │
+                │  FEATURE           │
+                │  EXTRACTION        │
+                │  K. B. Sohith      │
+                │  Chowdary          │
+                └────────┬───────────┘
+                         │
+               ✓ Statistical features
+               ✓ Feature validation
+               ✓ ML-ready matrix
+                         │
+                         ▼
+           extracted_features.tsv
+               (287 genes × 6 features)
+                    1,722 features
+                         │
+                         ▼
+                  FINAL OUTPUT
+                ML-Ready Dataset
+
+
+
+
+---
+
+## 💻 Installation
+
+### System Requirements
+
+- **OS:** macOS, Linux, or Windows
+- **Python:** 3.10 or higher
+- **RAM:** 4GB minimum
+- **Disk Space:** 500MB (with data)
+
+### Prerequisites
+
+'''bash'''
+# Check Python version
+python --version  # Should be 3.10+
+
+# Check pip
+pip --version
+
+
+git clone https://github.com/ajeetgupta7/Early-Stage-Lung-Cancer-Detection.git
+cd Early-Stage-Lung-Cancer-Detection
