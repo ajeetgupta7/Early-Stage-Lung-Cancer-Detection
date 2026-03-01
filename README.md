@@ -158,7 +158,7 @@ This project demonstrates a systematic, team-based approach to gene expression d
 
 ### Prerequisites
 
-'''bash'''
+
 # Check Python version
 python --version  # Should be 3.10+
 
