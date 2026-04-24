@@ -168,3 +168,48 @@ pip --version
 
 git clone https://github.com/ajeetgupta7/Early-Stage-Lung-Cancer-Detection.git
 cd Early-Stage-Lung-Cancer-Detection
+
+---
+
+## 🗂️ Combined Dataset
+
+### Creating `dataset_combined.csv`
+
+After running the four-phase pipeline, execute the following script to merge
+the extracted X features with Y cancer-type labels into a single CSV file
+ready for model training:
+
+```bash
+python scripts/create_dataset_combined.py
+```
+
+The script:
+1. Reads X features from `outputs/X.csv` (or generates it from `outputs/extracted_features.tsv`)
+2. Reads Y labels from `outputs/Y.csv` (or generates them automatically)
+3. Validates that both files contain the same number of samples
+4. Handles missing values by filling with column medians
+5. Saves the combined dataset to `outputs/dataset_combined.csv`
+
+### Output Format
+
+| Column | Description |
+|--------|-------------|
+| `Sample_Index` | Zero-based row identifier |
+| `Gene` | Ensembl gene ID |
+| `Mean` | Mean expression across samples |
+| `Std` | Standard deviation of expression |
+| `Median` | Median expression |
+| `Max` | Maximum expression value |
+| `Min` | Minimum expression value |
+| `CV` | Coefficient of variation |
+| `Y_Encoded` | Encoded label: 0=ALK, 1=EGFR, 2=KRAS, 3=Triple-Negative |
+| `Y_Label` | String label (ALK / EGFR / KRAS / Triple-Negative) |
+
+### Label Distribution (GSE31210 study proportions)
+
+| Cancer Type | Encoding | Approximate % |
+|-------------|----------|---------------|
+| EGFR | 1 | 45 % |
+| KRAS | 2 | 35 % |
+| Triple-Negative | 3 | 15 % |
+| ALK | 0 | 5 % |
